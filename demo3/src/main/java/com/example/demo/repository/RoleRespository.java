@@ -2,12 +2,17 @@ package com.example.demo.repository;
 
 import com.example.demo.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+
+import javax.transaction.Transactional;
 
 public interface RoleRespository extends JpaRepository<Role, Integer> {
     @Query(value = "select * from Role where name=?", nativeQuery = true)
     Role findRoleByName(String name);
 
-    @Query(value = "select * from Role where id=?", nativeQuery = true)
-    Role findRoleById(Integer id);
+    @Modifying
+    @Transactional
+    @Query(value = "insert into Role(name) values (?)", nativeQuery = true)
+    void insertRole(String name);
 }

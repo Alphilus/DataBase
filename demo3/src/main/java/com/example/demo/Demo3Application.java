@@ -1,16 +1,14 @@
 package com.example.demo;
 
-import com.example.demo.entities.User;
 import com.example.demo.services.CourseService;
 import com.example.demo.services.RoleService;
 import com.example.demo.services.UserService;
+import com.example.demo.view.SchoolMenu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -28,8 +26,12 @@ public class Demo3Application implements CommandLineRunner {
 	@Autowired
 	private CourseService courseService;
 
+	@Autowired
+	private SchoolMenu schoolMenu;
+
 	@Override
 	public void run(String... args) throws Exception {
+		Scanner scanner = new Scanner(System.in);
 //		System.out.println("Mời bạn nhập Id mà bạn muốn tìm: ");
 //		int id = Integer.parseInt(new Scanner(System.in).nextLine());
 //		userService.findUserById(id);
@@ -43,10 +45,17 @@ public class Demo3Application implements CommandLineRunner {
 //		String name = new Scanner(System.in).nextLine();
 //		roleService.findUserByRole(name);
 
-		System.out.println("Bạn nhập thông tin của khóa học: ");
-		double price = Double.parseDouble(new Scanner(System.in).nextLine());
-		String timeLine = new Scanner(System.in).nextLine();
-		int vote = Integer.parseInt(new Scanner(System.in).nextLine());
-		courseService.findCourseByMonthAndPriceAndVote(price,timeLine,vote);
+//		System.out.println("Bạn nhập thông tin của khóa học: ");
+//		double price = Double.parseDouble(new Scanner(System.in).nextLine());
+//		String timeLine = new Scanner(System.in).nextLine();
+//		int vote = Integer.parseInt(new Scanner(System.in).nextLine());
+//		courseService.findCourseByMonthAndPriceAndVote(price,timeLine,vote);
+
+		schoolMenu.menu(scanner);
+
+//		System.out.println("Nhập thông tin của khóa học:");
+//		String name = new Scanner(System.in).nextLine();
+//		String timeLine = new Scanner(System.in).nextLine();
+//		courseService.insertCourse(name, timeLine);
 	}
 }
