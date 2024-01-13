@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.dto.UserDTO;
 import com.example.demo.services.CourseService;
 import com.example.demo.services.RoleService;
 import com.example.demo.services.UserService;
@@ -31,7 +32,9 @@ public class Demo3Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Scanner scanner = new Scanner(System.in);
+//		Scanner scanner = new Scanner(System.in);
+//		schoolMenu.menu(scanner);
+
 //		System.out.println("Mời bạn nhập Id mà bạn muốn tìm: ");
 //		int id = Integer.parseInt(new Scanner(System.in).nextLine());
 //		userService.findUserById(id);
@@ -50,12 +53,13 @@ public class Demo3Application implements CommandLineRunner {
 //		String timeLine = new Scanner(System.in).nextLine();
 //		int vote = Integer.parseInt(new Scanner(System.in).nextLine());
 //		courseService.findCourseByMonthAndPriceAndVote(price,timeLine,vote);
-
-		schoolMenu.menu(scanner);
-
 //		System.out.println("Nhập thông tin của khóa học:");
 //		String name = new Scanner(System.in).nextLine();
 //		String timeLine = new Scanner(System.in).nextLine();
 //		courseService.insertCourse(name, timeLine);
+
+//		userService.findUserAndRole();
+//		userService.findUsersAndBank();
+		userService.findUserAndCourse();
 	}
 }

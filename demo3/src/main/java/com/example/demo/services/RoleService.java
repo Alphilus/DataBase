@@ -1,13 +1,9 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.Role;
-import com.example.demo.entities.User;
 import com.example.demo.repository.RoleRespository;
-import com.example.demo.repository.UserRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 public class RoleService {

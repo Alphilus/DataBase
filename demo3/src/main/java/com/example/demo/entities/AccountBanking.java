@@ -14,5 +14,5 @@ public class AccountBanking {
     @Column(name = "name_bank")
     private String nameBank;
     @Column(name = "account_num")
-    private int accountNum;
+    private String accountNum;
 }
