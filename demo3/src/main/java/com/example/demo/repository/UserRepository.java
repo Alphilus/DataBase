@@ -30,7 +30,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Transactional
     @Query(value = "insert into User(name,phone,email) values(?) ", nativeQuery = true)
-    void insertUser(String nane, String phone, String email);
+    void insertUser(String name, String phone, String email);
 
     @Modifying
     @Transactional
